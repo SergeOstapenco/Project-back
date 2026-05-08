@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Service.AddDbContext<AppDbContext>(options =>
- options.UseNpgsql(builder.Configuration.GetConnection.String("DefaultConnection")))
+ options.UseNpgsql(builder.Configuration.GetConnection.String("DefaultConnection")));
 
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAll", policy => {
