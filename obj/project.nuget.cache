@@ -1,8 +1,31 @@
 {
   "version": 2,
-  "dgSpecHash": "BPQdAxE7JSU=",
+  "dgSpecHash": "sY+HnixKUJ8=",
   "success": true,
-  "projectFilePath": "/Users/alexeipavliuc/my-travel-backend/backend.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "C:\\Users\\user\\Project Final\\Project-back\\backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.7\\microsoft.entityframeworkcore.10.0.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.7\\microsoft.entityframeworkcore.abstractions.10.0.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.7\\microsoft.entityframeworkcore.analyzers.10.0.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\mongodb.bson\\3.8.0\\mongodb.bson.3.8.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\mongodb.driver\\3.8.0\\mongodb.driver.3.8.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Snappier' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-pggp-6c3x-2xmx",
+      "projectPath": "C:\\Users\\user\\Project Final\\Project-back\\backend.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\user\\Project Final\\Project-back\\backend.csproj",
+      "libraryId": "Snappier",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }
