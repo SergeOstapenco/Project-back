@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Oxc3TIzYTdY=",
+  "dgSpecHash": "rBk91SfXS6g=",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Project Final\\Project-back\\backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",
@@ -18,7 +20,13 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.7\\microsoft.entityframeworkcore.analyzers.10.0.7.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.7\\microsoft.entityframeworkcore.design.10.0.7.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.7\\microsoft.entityframeworkcore.relational.10.0.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.7\\microsoft.extensions.dependencymodel.10.0.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.14.0\\microsoft.identitymodel.abstractions.8.14.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.14.0\\microsoft.identitymodel.jsonwebtokens.8.14.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.identitymodel.logging\\8.14.0\\microsoft.identitymodel.logging.8.14.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.14.0\\microsoft.identitymodel.tokens.8.14.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.openapi\\2.4.1\\microsoft.openapi.2.4.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mongodb.bson\\3.8.0\\mongodb.bson.3.8.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mongodb.driver\\3.8.0\\mongodb.driver.3.8.0.nupkg.sha512",
@@ -28,6 +36,10 @@
     "C:\\Users\\user\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\10.0.1\\npgsql.entityframeworkcore.postgresql.10.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\swashbuckle.aspnetcore\\10.1.7\\swashbuckle.aspnetcore.10.1.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.1.7\\swashbuckle.aspnetcore.swagger.10.1.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.1.7\\swashbuckle.aspnetcore.swaggergen.10.1.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.1.7\\swashbuckle.aspnetcore.swaggerui.10.1.7.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.composition\\9.0.0\\system.composition.9.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.composition.attributedmodel\\9.0.0\\system.composition.attributedmodel.9.0.0.nupkg.sha512",
@@ -38,6 +50,30 @@
     "C:\\Users\\user\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 16.1.1 was resolved.",
+      "projectPath": "C:\\Users\\user\\Project Final\\Project-back\\backend.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\user\\Project Final\\Project-back\\backend.csproj",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'SharpCompress' 0.30.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-6c8g-7p36-r338",
+      "projectPath": "C:\\Users\\user\\Project Final\\Project-back\\backend.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\user\\Project Final\\Project-back\\backend.csproj",
+      "libraryId": "SharpCompress",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
     {
       "code": "NU1903",
       "level": "Warning",

@@ -1,11 +1,13 @@
 using Backend.Mappings;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
+using Backend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAutoMapper(typeof(Program));
 
-builder.Service.AddDbContext<AppDbContext>(options =>
- options.UseNpgsql(builder.Configuration.GetConnection.String("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(options =>
+ options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAll", policy => {
