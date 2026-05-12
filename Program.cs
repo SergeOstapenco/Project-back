@@ -4,10 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Backend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
- options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAll", policy => {
@@ -24,11 +23,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Travel API V1");
+    c.RoutePrefix = "swagger";
+});
 
 app.UseCors("AllowAll");
 app.MapControllers();
