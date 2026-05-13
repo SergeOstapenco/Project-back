@@ -1,7 +1,7 @@
-using Backend.Data;
-using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Backend.Services;
+using Backend.DTOs;
+using Backend;
 
 namespace Backend.Controllers;
 
@@ -9,69 +9,51 @@ namespace Backend.Controllers;
 [Route("api/tours")]
 public class ToursController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly ITourService _tourService;
 
-    public ToursController(AppDbContext context)
+    public ToursController(ITourService tourService)
     {
-        _context = context;
+        _tourService = tourService;
     }
 
     [HttpGet]
     public async Task<IActionResult> Get()
     {
-        var tours = await _context.Tours.ToListAsync();
+        var tours = await _tourService.GetAllTours();
         return Ok(tours);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var tour = await _context.Tours.FindAsync(id);
-
-        if (tour == null)
-            return NotFound();
-
+        var tour = await _tourService.GetTourById(id);
+        if (tour == null) return NotFound();
         return Ok(tour);
     }
 
+    [AdminMod]
     [HttpPost]
-    public async Task<IActionResult> Create(Tour tour)
+    public async Task<IActionResult> Create([FromBody] TourDto dto)
     {
-        _context.Tours.Add(tour);
-        await _context.SaveChangesAsync();
-
-        return Ok(tour);
+        var created = await _tourService.CreateTour(dto);
+        return Ok(created);
     }
 
+    [AdminMod]
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, Tour updatedTour)
+    public async Task<IActionResult> Update(int id, [FromBody] TourDto dto)
     {
-        var tour = await _context.Tours.FindAsync(id);
-
-        if (tour == null)
-            return NotFound();
-
-        tour.Title = updatedTour.Title;
-        tour.Price = updatedTour.Price;
-        tour.Category = updatedTour.Category;
-        tour.Img = updatedTour.Img;
-
-        await _context.SaveChangesAsync();
-
-        return Ok(tour);
+        var updated = await _tourService.UpdateTour(id, dto);
+        if (updated == null) return NotFound();
+        return Ok(updated);
     }
 
+    [AdminMod]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var tour = await _context.Tours.FindAsync(id);
-
-        if (tour == null)
-            return NotFound();
-
-        _context.Tours.Remove(tour);
-        await _context.SaveChangesAsync();
-
+        var result = await _tourService.DeleteTour(id);
+        if (!result) return NotFound();
         return Ok();
     }
 }

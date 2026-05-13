@@ -26,11 +26,11 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Travel API V1");
-    c.RoutePrefix = "swagger";
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
 });
 
 app.UseCors("AllowAll");
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
