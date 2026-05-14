@@ -48,9 +48,22 @@ public class RoleHeaderOperationFilter : IOperationFilter
         var hasAdminMod = context.MethodInfo
             .GetCustomAttributes(true)
             .OfType<AdminModAttribute>()
-            .Any();
+            .Any()
+            || context.MethodInfo.DeclaringType?
+                .GetCustomAttributes(true)
+                .OfType<AdminModAttribute>()
+                .Any() == true;
 
-        if (!hasAdminMod)
+        var hasUserMod = context.MethodInfo
+            .GetCustomAttributes(true)
+            .OfType<UserModAttribute>()
+            .Any()
+            || context.MethodInfo.DeclaringType?
+                .GetCustomAttributes(true)
+                .OfType<UserModAttribute>()
+                .Any() == true;
+
+        if (!hasAdminMod && !hasUserMod)
         {
             return;
         }
@@ -61,7 +74,9 @@ public class RoleHeaderOperationFilter : IOperationFilter
             Name = "Role",
             In = ParameterLocation.Header,
             Required = true,
-            Description = "Введите Admin для доступа к этому действию."
+            Description = hasAdminMod
+                ? "Введите Admin для доступа к этому действию."
+                : "Введите User или Admin для доступа к этому действию."
         });
     }
 }
