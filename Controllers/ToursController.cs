@@ -31,6 +31,20 @@ public class ToursController : ControllerBase
         return Ok(tour);
     }
 
+    [UserMod]
+    [HttpPost("{id}/book")]
+    public async Task<IActionResult> Book(int id)
+    {
+        var tour = await _tourService.GetTourById(id);
+        if (tour == null) return NotFound();
+
+        return Ok(new
+        {
+            Message = "Tour booked successfully",
+            Tour = tour
+        });
+    }
+
     [AdminMod]
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] TourDto dto)

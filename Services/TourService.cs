@@ -23,7 +23,7 @@ public class TourService : ITourService
         return _mapper.Map<List<TourDto>>(tours);
     }
 
-    public async Task<TourDto> GetTourById(int id)
+    public async Task<TourDto?> GetTourById(int id)
     {
         var tour = await _context.Tours.FindAsync(id);
         return _mapper.Map<TourDto>(tour);
@@ -37,7 +37,7 @@ public class TourService : ITourService
         return _mapper.Map<TourDto>(tour);
     }
 
-    public async Task<TourDto> UpdateTour(int id, TourDto dto)
+    public async Task<TourDto?> UpdateTour(int id, TourDto dto)
     {
         var tour = await _context.Tours.FindAsync(id);
         if (tour == null) return null;
