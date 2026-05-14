@@ -2,6 +2,9 @@ using Backend.Mappings;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Backend.Services;
+using Backend;
+using Microsoft.OpenApi;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +22,10 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<ITourService, TourService>();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.OperationFilter<RoleHeaderOperationFilter>();
+});
 
 var app = builder.Build();
 
@@ -34,3 +40,28 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public class RoleHeaderOperationFilter : IOperationFilter
+{
+    public void Apply(OpenApiOperation operation, OperationFilterContext context)
+    {
+        var hasAdminMod = context.MethodInfo
+            .GetCustomAttributes(true)
+            .OfType<AdminModAttribute>()
+            .Any();
+
+        if (!hasAdminMod)
+        {
+            return;
+        }
+
+        operation.Parameters ??= new List<IOpenApiParameter>();
+        operation.Parameters.Add(new OpenApiParameter
+        {
+            Name = "Role",
+            In = ParameterLocation.Header,
+            Required = true,
+            Description = "Введите Admin для доступа к этому действию."
+        });
+    }
+}
