@@ -8,6 +8,8 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Tour, TourDto>().ReverseMap();
+        CreateMap<Tour, TourDto>();
+        CreateMap<TourDto, Tour>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore());
     }
 }
