@@ -1,23 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Backend;
 
-public class AdminModAttribute : ActionFilterAttribute
+public class AdminModAttribute : AuthorizeAttribute
 {
-    public override void OnActionExecuting(ActionExecutingContext context)
+    public AdminModAttribute() : base()
     {
-        var userRole = context.HttpContext.Request.Headers["Role"].ToString();
-
-        if (!string.Equals(userRole, "Admin", StringComparison.OrdinalIgnoreCase))
-        {
-            context.Result = new ContentResult()
-            {
-                StatusCode = 403,
-                Content = "Forbidden: Admin role required"
-            };
-        }
-
-        base.OnActionExecuting(context);
+        Roles = "admin";
     }
 }

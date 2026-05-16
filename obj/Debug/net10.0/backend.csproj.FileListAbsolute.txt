@@ -160,3 +160,15 @@ C:\Users\user\Project Final\Project-back\obj\Debug\net10.0\backend.csproj.Up2Dat
 C:\Users\user\Project Final\Project-back\obj\Debug\net10.0\backend.genruntimeconfig.cache
 C:\Users\user\Project Final\Project-back\obj\Debug\net10.0\ref\backend.dll
 C:\Users\user\Project Final\Project-back\bin\Debug\net10.0\appsettings.json
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.csproj.AssemblyReference.cache
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.AssemblyInfoInputs.cache
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.AssemblyInfo.cs
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.csproj.CoreCompileInputs.cache
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.sourcelink.json
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.dll
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\refint\backend.dll
+C:\Users\miste\Back\Project-back\obj\Debug\net10.0\backend.pdb
