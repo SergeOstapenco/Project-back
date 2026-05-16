@@ -69,6 +69,8 @@ Mappings/MappingProfile.cs
 Migrations/
  20260511111821_InitialCreate.cs
  20260511111821_InitialCreate.Designer.cs
+ 20260516221057_AddUsersTable.cs
+ 20260516221057_AddUsersTable.Designer.cs
  AppDbContextModelSnapshot.cs
 Models/
  Tour.cs

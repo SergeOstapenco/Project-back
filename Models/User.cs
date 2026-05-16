@@ -5,20 +5,22 @@ namespace Backend.Models;
 public class User
 {
     public int Id { get; set; }
-    
+
     [Required]
     [MaxLength(100)]
-    public string Username { get; set; }
-    
+    public string Username { get; set; } = string.Empty;
+
     [Required]
     [EmailAddress]
-    public string Email { get; set; }
-    
+    [MaxLength(150)]
+    public string Email { get; set; } = string.Empty;
+
     [Required]
-    public string PasswordHash { get; set; }
-    
+    public string PasswordHash { get; set; } = string.Empty;
+
     [Required]
-    public string Role { get; set; } = "user"; // "user" или "admin"
-    
+    [MaxLength(30)]
+    public string Role { get; set; } = "user";
+
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
